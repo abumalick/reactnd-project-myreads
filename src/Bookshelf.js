@@ -12,7 +12,11 @@ const Bookshelf = ({books, title}) =>
       {books.length
         ? <ol className="books-grid">
             {books.map((book, index) =>
-              <li key={index}>
+              <li
+                key={
+                  index /* should use book.id when https://github.com/udacity/reactnd-issues/issues/75 is fixed */
+                }
+              >
                 <Book {...book} />
               </li>,
             )}

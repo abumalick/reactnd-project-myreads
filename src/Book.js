@@ -9,7 +9,8 @@ const Book = (props, {handleMoveBook, shelves}) =>
         style={{
           width: 128,
           height: 193,
-          backgroundImage: `url(${props.imageLinks.smallThumbnail})`,
+          backgroundImage: `url(${props.imageLinks &&
+            props.imageLinks.smallThumbnail})`,
         }}
       />
       <div className="book-shelf-changer">
@@ -48,7 +49,7 @@ const Book = (props, {handleMoveBook, shelves}) =>
   </div>;
 Book.propTypes = {
   authors: PropTypes.arrayOf(PropTypes.string.isRequired),
-  imageLinks: PropTypes.object.isRequired,
+  imageLinks: PropTypes.object,
   shelf: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
